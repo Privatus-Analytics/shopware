@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
+    <card>
+        <title>Privatus Analytics</title>
+        <title lang="de-DE">Privatus Analytics</title>
+
+        <input-field type="text">
+            <name>siteId</name>
+            <label>Site ID</label>
+            <label lang="de-DE">Site-ID</label>
+            <placeholder>pa_XXXXXXXXXX</placeholder>
+            <helpText>Find it in Privatus Analytics under Site settings, Tracking. It starts with pa_. Nothing is added to your shop until you enter it. No account yet? Start free at privatusanalytics.com.</helpText>
+            <helpText lang="de-DE">Sie finden sie in Privatus Analytics unter Website-Einstellungen, Tracking. Sie beginnt mit pa_. Erst wenn Sie sie eintragen, wird etwas in Ihren Shop eingefügt. Noch kein Konto? Starten Sie kostenlos auf privatusanalytics.com.</helpText>
+        </input-field>
+
+        <input-field type="multi-select">
+            <name>modules</name>
+            <label>Extra reports</label>
+            <label lang="de-DE">Zusätzliche Berichte</label>
+            <defaultValue>["engage","auto","vitals","clicks","ask"]</defaultValue>
+            <options>
+                <option>
+                    <id>engage</id>
+                    <name>Time on page and scroll depth</name>
+                    <name lang="de-DE">Verweildauer und Scrolltiefe</name>
+                </option>
+                <option>
+                    <id>auto</id>
+                    <name>Outbound links, downloads, form sends and 404 pages</name>
+                    <name lang="de-DE">Externe Links, Downloads, Formulare und 404-Seiten</name>
+                </option>
+                <option>
+                    <id>vitals</id>
+                    <name>Page speed (Web Vitals)</name>
+                    <name lang="de-DE">Ladezeit (Web Vitals)</name>
+                </option>
+                <option>
+                    <id>clicks</id>
+                    <name>Click maps</name>
+                    <name lang="de-DE">Klick-Karten</name>
+                </option>
+                <option>
+                    <id>ask</id>
+                    <name>On-site surveys</name>
+                    <name lang="de-DE">Umfragen im Shop</name>
+                </option>
+            </options>
+        </input-field>
+    </card>
+
+    <card>
+        <title>Shop events</title>
+        <title lang="de-DE">Shop-Ereignisse</title>
+
+        <input-field type="bool">
+            <name>trackAddToCart</name>
+            <label>Count "Add to Cart"</label>
+            <label lang="de-DE">"Add to Cart" zählen</label>
+            <defaultValue>true</defaultValue>
+            <helpText>Sent when a shopper adds a product to the cart. No product or customer data is sent.</helpText>
+            <helpText lang="de-DE">Wird gesendet, wenn ein Kunde ein Produkt in den Warenkorb legt. Es werden keine Produkt- oder Kundendaten gesendet.</helpText>
+        </input-field>
+
+        <input-field type="bool">
+            <name>trackCheckout</name>
+            <label>Count "Checkout Started"</label>
+            <label lang="de-DE">"Checkout Started" zählen</label>
+            <defaultValue>true</defaultValue>
+            <helpText>Sent once per cart when a shopper opens the order review page.</helpText>
+            <helpText lang="de-DE">Wird einmal pro Warenkorb gesendet, wenn ein Kunde die Bestellübersicht öffnet.</helpText>
+        </input-field>
+
+        <input-field type="bool">
+            <name>trackPurchases</name>
+            <label>Count "Purchase" with the order total</label>
+            <label lang="de-DE">"Purchase" mit Bestellsumme zählen</label>
+            <defaultValue>true</defaultValue>
+            <helpText>Sent once per order on the thank-you page, with the order total and currency only. No order number, name or email is sent.</helpText>
+            <helpText lang="de-DE">Wird einmal pro Bestellung auf der Danke-Seite gesendet, nur mit Bestellsumme und Währung. Keine Bestellnummer, kein Name und keine E-Mail.</helpText>
+        </input-field>
+    </card>
+
+    <card>
+        <title>Advanced</title>
+        <title lang="de-DE">Erweitert</title>
+
+        <input-field type="text">
+            <name>exclude</name>
+            <label>Pages not to count</label>
+            <label lang="de-DE">Nicht gezählte Seiten</label>
+            <placeholder>/account/*,/wishlist</placeholder>
+            <helpText>Comma-separated paths. * matches anything. These pages send nothing.</helpText>
+            <helpText lang="de-DE">Pfade, durch Kommas getrennt. * passt auf alles. Diese Seiten senden nichts.</helpText>
+        </input-field>
+
+        <input-field type="text">
+            <name>scriptHost</name>
+            <label>Script host</label>
+            <label lang="de-DE">Skript-Host</label>
+            <defaultValue>https://privatusstats.com</defaultValue>
+            <helpText>Where pa.js loads from. Change it only if you host your own copy.</helpText>
+            <helpText lang="de-DE">Von hier wird pa.js geladen. Nur ändern, wenn Sie eine eigene Kopie hosten.</helpText>
+        </input-field>
+    </card>
+</config>

@@ -1,0 +1,12 @@
+{% sw_extends '@Storefront/storefront/component/analytics.html.twig' %}
+
+{% block component_head_analytics %}
+    {{ parent() }}
+
+    {% block component_head_analytics_privatus %}
+        {# Built and escaped in PrivatusAnalytics\Tracker\TagRenderer. #}
+        {% if privatusAnalytics is defined and privatusAnalytics %}
+            {{ privatusAnalytics|raw }}
+        {% endif %}
+    {% endblock %}
+{% endblock %}
